@@ -54,8 +54,6 @@ Reference files are in `~/.claude/references/asd-ste100/`. Read the applicable f
 
 Exceptions: code, identifiers, file paths, command output, and quoted text do not change. A style rule elsewhere in this file, or a direct instruction from me, has priority.
 
-Source: ASD-STE100 Issue 9 (15 January 2025), free from <https://www.asd-ste100.org/>. It has 53 writing rules, a dictionary of 875 approved words, and 1274 words with approved alternatives. Issue 10 is due in January 2028. The dictionary is proprietary and is not available to you. Follow the rules, and do not claim dictionary compliance.
-
 ## Secrets
 
 Keep every secret out of version control, and out of any file that I could publish.
