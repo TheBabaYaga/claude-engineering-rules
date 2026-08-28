@@ -1,4 +1,4 @@
-# claude-house-rules
+# claude-engineering-rules
 
 A `CLAUDE.md` for Claude Code, and the writing standard it applies.
 
