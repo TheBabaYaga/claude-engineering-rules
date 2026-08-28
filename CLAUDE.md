@@ -7,6 +7,7 @@ Always specify a language on fenced code blocks, even for plain text. Use ```tex
 Always write in ASD-STE100 Simplified Technical English, unless I tell you otherwise. Apply it to all prose for a human reader: chat replies, explanations, docs, code comments, commit message bodies, PR descriptions, and UI copy. The goal is text I can read quickly and understand on the first pass.
 
 Core rules. Apply these every time:
+
 - Use the active voice. Use the passive voice only when the actor is unknown.
 - Use simple tenses only: infinitive, imperative, simple past, simple present, simple future, and past participle as an adjective.
 - Keep an instruction to 20 words or less. Keep a description to 25 words or less.
@@ -23,6 +24,7 @@ Core rules. Apply these every time:
 Never remove a hedge, a condition, or a number to make a sentence shorter. "May have failed" is not "failed".
 
 Reference files are in `~/.claude/references/asd-ste100/`. Read the applicable file when you need more than the list above:
+
 - `writing-rules.md` — all 53 rules and the 8 general recommendations, by number.
 - `applying-ste.md` — the two modes, the structural and lexical split, the three deliberate departures, and where STE does not apply.
 - `examples.md` — before and after pairs.
@@ -88,6 +90,7 @@ Note: shellcheck does not support zsh, so `.zshrc` and other zsh files are out o
 Convention: `uses: <owner>/<repo>@<full-40-char-sha>  # <version-tag>` — the trailing comment preserves human-readable version context for future bumps. Look up the SHA via `gh api repos/<owner>/<repo>/git/refs/tags/<tag>` (or the tags endpoint).
 
 Scope:
+
 - **Third-party actions** (`googleapis/*`, `aws-actions/*`, `hashicorp/*`, vendor SDKs, community actions): always SHA-pin.
 - **First-party actions** (`actions/*` — GitHub's own org): tag-pinning is acceptable per GitHub's own posture. SHA-pin if the project's threat model warrants it.
 - **Quasi-first-party** (`docker/*`, `azure/*`): match the project's existing convention. If unclear, SHA-pin — the marginal cost is one `gh api` lookup.
@@ -99,12 +102,14 @@ When bumping a SHA-pinned action, update both the SHA and the trailing comment i
 **In repos that use conventional-commits-driven release tooling, every commit message must follow the [Conventional Commits](https://www.conventionalcommits.org/) spec.** A wrong prefix is not cosmetic — it produces the wrong version bump (or no bump at all) when the release tool scans history, and that lands in customer-facing release notes.
 
 Detect the tooling first. Not every repo uses it:
+
 - `release-please-config.json` / `.release-please-manifest.json` → release-please. Default visible types: `feat`, `fix`, `perf`, `revert` (and `feat!`/`BREAKING CHANGE:` for major bumps). Other types (`docs`, `style`, `chore`, `refactor`, `test`, `build`, `ci`) parse fine but don't trigger releases or appear in the default changelog.
 - `.cz.toml` / `.cz.yaml` / `cz.json` → commitizen-tools.
 - `.releaserc` / `release.config.*` → semantic-release.
 - `commitlint.config.*` → commitlint enforcement.
 
 Format:
+
 ```text
 <type>[optional scope][!]: <description>
 
@@ -114,6 +119,7 @@ Format:
 ```
 
 Examples:
+
 - `feat(api): add /v2/users endpoint` — minor bump
 - `fix(parser): handle null input` — patch bump
 - `feat!: drop legacy /users endpoint` — major bump (or minor pre-1.0 if `bump-major-pre-major: false`)
@@ -121,6 +127,7 @@ Examples:
 - `ci: pin docker/build-push-action to SHA` — no bump
 
 Rules for me when committing in such a repo:
+
 1. **Never invent a type** — stick to the canonical set.
 2. **Match the scope of the change** — single-purpose commits. Don't mix `feat:` and `fix:` work.
 3. **Use `!` or `BREAKING CHANGE:` deliberately** — a stray `!` will silently major-bump prod next release.
@@ -143,6 +150,7 @@ Rules for me when committing in such a repo:
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
 
 Before implementing:
+
 - State your assumptions explicitly. If uncertain, ask.
 - If multiple interpretations exist, present them - don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
@@ -165,12 +173,14 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 **Touch only what you must. Clean up only your own mess.**
 
 When editing existing code:
+
 - Don't "improve" adjacent code, comments, or formatting.
 - Don't refactor things that aren't broken.
 - Match existing style, even if you'd do it differently.
 - If you notice unrelated dead code, mention it - don't delete it.
 
 When your changes create orphans:
+
 - Remove imports/variables/functions that YOUR changes made unused.
 - Don't remove pre-existing dead code unless asked.
 
@@ -181,6 +191,7 @@ The test: Every changed line should trace directly to the user's request.
 **Define success criteria. Loop until verified.**
 
 Transform tasks into verifiable goals:
+
 - "Add validation" → "Write tests for invalid inputs, then make them pass"
 - "Fix the bug" → "Write a test that reproduces it, then make it pass"
 - "Refactor X" → "Ensure tests pass before and after"
@@ -200,6 +211,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 **Where possible, work test-first. TDD is the default way of working, not an opt-in.**
 
 The loop: red → green → refactor.
+
 - Write a failing test that captures the requirement or reproduces the bug.
 - Run it and watch it fail — a test that never failed proves nothing.
 - Write the minimum code to make it pass.
