@@ -21,7 +21,30 @@ Core rules. Apply these every time:
 - Use an "-ing" form only inside a technical noun.
 - In a safety instruction, put the command or the condition first. The explanation follows it.
 
+Word choice. The standard has an approved-word dictionary, and I do not have it. Apply the principle instead:
+
+- Take the shortest and most common word that carries the meaning.
+- Use the same word every time for one thing. Do not vary a term for style.
+- Do not turn a verb into a noun. Write "we decided", not "we made a decision".
+- Do not use two words where one is enough.
+- Keep a technical term when it is the correct term. Simplify the words around it.
+- Prefer the plain word. Common examples:
+
+```text
+utilize            -> use          obtain      -> get     prior to  -> before
+commence           -> start        terminate   -> end     assist    -> help
+in the event that  -> if           in order to -> to      at this time -> now
+```
+
 Never remove a hedge, a condition, or a number to make a sentence shorter. "May have failed" is not "failed".
+
+Check your prose before you send it. Read it once, and correct:
+
+1. A sentence longer than 20 words, or a paragraph longer than six sentences.
+2. The passive voice where the actor is known.
+3. A semicolon, a phrasal verb, or a Latin abbreviation.
+4. A word that a shorter and more common word can replace.
+5. One thing named two different ways.
 
 Reference files are in `~/.claude/references/asd-ste100/`. Read the applicable file when you need more than the list above:
 

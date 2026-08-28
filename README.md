@@ -47,7 +47,13 @@ reproduction rights to eight groups only. Get the standard from
 
 These files do not contain the dictionary, which is proprietary. A rule with
 the mark **[D]** needs the dictionary, so you cannot apply that rule from this
-repo. One bullet in `CLAUDE.md` covers the gap: use plain, everyday words.
+repo.
+
+`CLAUDE.md` closes that gap by principle instead of by word list. The "Word
+choice" block asks for the shortest common word, one term per thing, no
+nominalizations, and a short table of plain replacements. The "Check your prose"
+block gives the agent five things to correct before it sends prose. You get most
+of the benefit of the dictionary, and you need no licence for it.
 
 ## What you will want to change
 
