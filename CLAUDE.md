@@ -40,7 +40,6 @@ Keep every secret out of version control, and out of any file that I could publi
 - Never print a secret value in the terminal. When you inspect a config file, print the key names only.
 - Never commit a `.env` file, a private key, or a token. Run `git check-ignore -v <file>` first.
 - Tell me at once if a secret reaches your output, a log, or a commit. Treat that secret as compromised.
-- Rotate the secret first. Clean the git history second.
 
 ## Git safety
 
@@ -218,7 +217,3 @@ The loop: red → green → refactor.
 - Refactor with the test as a safety net.
 
 "Where possible" means TDD may be skipped only when it genuinely doesn't fit: throwaway prototypes/spikes, pure config or docs changes, or code whose behaviour can't be meaningfully asserted in a test. When skipping, say so and why — don't skip silently.
-
----
-
-**These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
