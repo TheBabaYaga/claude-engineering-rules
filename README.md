@@ -55,6 +55,17 @@ nominalizations, and a short table of plain replacements. The "Check your prose"
 block gives the agent five things to correct before it sends prose. You get most
 of the benefit of the dictionary, and you need no licence for it.
 
+## About the coding guidelines
+
+Andrej Karpathy wrote a [post on the mistakes that a coding agent
+makes](https://x.com/karpathy/status/2015883857489522876). The `## Coding
+Guidelines` section answers that post with four principles: think before
+coding, simplicity first, surgical changes, and goal-driven execution. The
+wording follows
+[multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md),
+which turned the post into agent rules. This repo keeps the four principles,
+and adds a fifth on test-driven development.
+
 ## What you will want to change
 
 These rules are opinions, and they are mine:
