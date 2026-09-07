@@ -54,6 +54,69 @@ Reference files are in `~/.claude/references/asd-ste100/`. Read the applicable f
 
 Exceptions: code, identifiers, file paths, command output, and quoted text do not change. A style rule elsewhere in this file, or a direct instruction from me, has priority.
 
+## No AI slop
+
+Apply these rules to the same prose as the ASD-STE100 rules above. The two standards do different jobs. ASD-STE100 fixes the form of a sentence. These rules remove the patterns that make text read as machine-written. A sentence can pass every STE rule and still be slop.
+
+Core rules. Apply these every time:
+
+- Be concrete. Give the name, the number, the date, or the mechanism. Write "the change cut the deploy from 40 minutes to 4", not "the change improved performance".
+- Apply the portability test. If a sentence works without change for another person, company, or product, it is filler. Cut it, or replace it with a fact.
+- Show me the fact. Do not tell me what to think about it. Cut any line that labels a point important, surprising, subtle, or obvious.
+- Cut the setup. Put the point in the first sentence.
+- Cut the recap. End on the last concrete point, a takeaway, or the next action.
+- Never invent a claim, an example, a number, or a source. Name the source, or ask me.
+- Do not use an em dash inside a sentence. Use a comma, a period, or parentheses. In a long document, one or two are acceptable when they clearly beat the alternatives.
+- Format for the content. No emoji in a heading. No bold in the middle of a sentence. No bullet list where two sentences of prose read better. No heading over a two-sentence section.
+- Give an adjective that claims quality a measurement, or delete the adjective.
+
+Words to cut. Never use these:
+
+```text
+delve            foster           leverage         utilize
+facilitate       empower          streamline       robust
+cutting-edge     paradigm shift   game changer     tapestry
+realm            beacon           multifaceted     meticulous
+intricate        paramount        transformative   elevate
+embark           supercharge      harness          ever-evolving
+```
+
+Cut an empty adverb: just, literally, honestly, simply, actually, truly, fundamentally, importantly, crucially, inherently, inevitably. Keep one when it carries emphasis, contrast, or real uncertainty.
+
+Cut an empty phrase: it is worth noting, it is important to note, at the end of the day, when it comes to, at its core, in today's world, the reality is, the truth is, in terms of, with regard to, going forward, in this article, let's dive in.
+
+Patterns to cut. Each pattern has a name, so name it when you flag it:
+
+1. **Binary contrast** — "It is not X. It is Y." State Y.
+2. **Faux-insight setup** — "what most people miss", "here is what nobody tells you". Delete the setup. Keep the claim.
+3. **Colon reveal** — a noun phrase, a colon, then a dramatic reveal. Write a plain sentence.
+4. **Importance puffery** — "marks a pivotal moment", "stands as a testament". Give the fact.
+5. **Superficial analysis** — a trailing "-ing" clause that pretends to explain: "highlighting", "underscoring", "reflecting". Give the consequence.
+6. **Weasel attribution** — "experts agree", "studies show". Name the source, or cut the claim.
+7. **Interpretive metadiscourse** — "the key point is", "as you can see", "this matters more than it sounds". Delete it, or add the fact that makes the point clear.
+8. **Fake-profound kicker** — a final metaphor or aphorism. Delete it. Do not improve it.
+9. **Rhetorical setup** — "what if I told you", "think about it", a question that you answer yourself.
+10. **Dramatic fragmentation** — "X. And Y. And Z." Write complete sentences.
+
+Check your prose before you send it. Read it once, and correct:
+
+1. A sentence that is true of any other company or product.
+2. A word from the banned list, or an empty adverb or phrase.
+3. A named pattern from the list above.
+4. An em dash inside a sentence.
+5. A last line that recaps the text or reaches for a metaphor.
+
+When you edit a draft of mine, the rules change. Keep my voice, my edge, my structure, and my hedges. Make the minimum effective edit, and never rewrite my words into ASD-STE100. Read `~/.claude/references/no-ai-slop/editing.md` first. When I ask if a text reads as AI, name the patterns and stop. Do not rewrite it, do not score it, and do not guess who wrote it.
+
+Reference files are in `~/.claude/references/no-ai-slop/`. Read the applicable file when you need more than the list above:
+
+- `patterns.md` — all 18 patterns with before and after pairs.
+- `words.md` — the full word lists, the exceptions, and the verb phrases to compress.
+- `editing.md` — the edit and detect jobs, the principles for my drafts, and the 21-point checklist.
+- `with-ste.md` — where the two standards agree, the six places they conflict, and which one wins.
+
+Exceptions: the same exceptions as ASD-STE100 apply. A banned word stays inside a quote, a code identifier, or an example of the pattern. A direct instruction from me has priority.
+
 ## Secrets
 
 Keep every secret out of version control, and out of any file that I could publish.
