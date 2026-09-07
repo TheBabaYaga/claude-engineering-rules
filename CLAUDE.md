@@ -56,66 +56,82 @@ Exceptions: code, identifiers, file paths, command output, and quoted text do no
 
 ## No AI slop
 
-Apply these rules to the same prose as the ASD-STE100 rules above. The two standards do different jobs. ASD-STE100 fixes the form of a sentence. These rules remove the patterns that make text read as machine-written. A sentence can pass every STE rule and still be slop.
+ASD-STE100 fixes the form of a sentence. It cannot tell you whether the sentence was worth writing. "The tool improves developer productivity" is active, present tense, six words, and plain. It is also true of every tool ever built. Apply the rules below to the same prose, and apply them before the STE pass.
 
-Core rules. Apply these every time:
+Five failures make text read as machine-written. Each one has a test that you run on a single sentence.
 
-- Be concrete. Give the name, the number, the date, or the mechanism. Write "the change cut the deploy from 40 minutes to 4", not "the change improved performance".
-- Apply the portability test. If a sentence works without change for another person, company, or product, it is filler. Cut it, or replace it with a fact.
-- Show me the fact. Do not tell me what to think about it. Cut any line that labels a point important, surprising, subtle, or obvious.
-- Cut the setup. Put the point in the first sentence.
-- Cut the recap. End on the last concrete point, a takeaway, or the next action.
-- Never invent a claim, an example, a number, or a source. Name the source, or ask me.
-- Do not use an em dash inside a sentence. Use a comma, a period, or parentheses. In a long document, one or two are acceptable when they clearly beat the alternatives.
-- Format for the content. No emoji in a heading. No bold in the middle of a sentence. No bullet list where two sentences of prose read better. No heading over a two-sentence section.
-- Give an adjective that claims quality a measurement, or delete the adjective.
-
-Words to cut. Never use these:
+**1. The sentence is portable.** Swap the subject for a competitor, another team, or another product. If the sentence survives the swap, it carries no information. Delete it, or replace it with a name, a number, a date, or a mechanism.
 
 ```text
-delve            foster           leverage         utilize
-facilitate       empower          streamline       robust
-cutting-edge     paradigm shift   game changer     tapestry
-realm            beacon           multifaceted     meticulous
-intricate        paramount        transformative   elevate
-embark           supercharge      harness          ever-evolving
+The integration improved efficiency.
+-> The integration cut the deploy from 40 minutes to 4.
 ```
 
-Cut an empty adverb: just, literally, honestly, simply, actually, truly, fundamentally, importantly, crucially, inherently, inevitably. Keep one when it carries emphasis, contrast, or real uncertainty.
+**2. The sentence rates a fact instead of adding one.** Give me the fact. I will judge it.
 
-Cut an empty phrase: it is worth noting, it is important to note, at the end of the day, when it comes to, at its core, in today's world, the reality is, the truth is, in terms of, with regard to, going forward, in this article, let's dive in.
+- Cut any clause that tells me a point is important, surprising, subtle, or obvious.
+- Cut a trailing "-ing" clause that claims to explain meaning: highlighting, underscoring, reflecting, showcasing.
+- Cut a setup that makes you the only expert in the room: "what most people miss", "here is what nobody tells you".
+- Cut a phrase that announces what you are about to say: "it is worth noting", "the reality is", "let's dive in".
 
-Patterns to cut. Each pattern has a name, so name it when you flag it:
+**3. The sentence borrows a shape to fake insight.** State the claim as one plain sentence instead. Refuse five shapes:
 
-1. **Binary contrast** — "It is not X. It is Y." State Y.
-2. **Faux-insight setup** — "what most people miss", "here is what nobody tells you". Delete the setup. Keep the claim.
-3. **Colon reveal** — a noun phrase, a colon, then a dramatic reveal. Write a plain sentence.
-4. **Importance puffery** — "marks a pivotal moment", "stands as a testament". Give the fact.
-5. **Superficial analysis** — a trailing "-ing" clause that pretends to explain: "highlighting", "underscoring", "reflecting". Give the consequence.
-6. **Weasel attribution** — "experts agree", "studies show". Name the source, or cut the claim.
-7. **Interpretive metadiscourse** — "the key point is", "as you can see", "this matters more than it sounds". Delete it, or add the fact that makes the point clear.
-8. **Fake-profound kicker** — a final metaphor or aphorism. Delete it. Do not improve it.
-9. **Rhetorical setup** — "what if I told you", "think about it", a question that you answer yourself.
-10. **Dramatic fragmentation** — "X. And Y. And Z." Write complete sentences.
+- **The pivot** — "It is not X. It is Y." Say Y.
+- **The reveal** — a noun phrase, a colon, then a dramatic clause. Write a sentence.
+- **The self-answered question** — "What if I told you", "Think about it".
+- **The stack** — "X. And Y. And Z." Also "Not a X. Not a Y. A Z."
+- **The kicker** — a closing metaphor or aphorism. Delete it. Do not improve it. End on the last concrete sentence that you already wrote.
+
+**4. The claim has no backing.** An adjective that claims quality needs a measurement. A claim about what other people think needs a name. If you have neither, cut the claim. Never invent a number, a source, a quote, or a benchmark. Ask me.
+
+```text
+Experts agree the approach is robust.
+-> The approach held 40k requests a second in the load test.
+```
+
+**5. The form decorates instead of serving.** Remove any formatting that loses no information when it goes: an emoji in a heading, bold in the middle of a sentence, a heading over a two-sentence section, a bullet list where two sentences of prose read better. Do not use an em dash inside a sentence. Use a comma, a period, or parentheses.
+
+Words to cut. Each group fails for one reason, so apply the reason to a word that the list does not name:
+
+```text
+Claims quality, gives no measure   robust, seamless, powerful, blazing-fast,
+                                   world-class, cutting-edge, enterprise-grade
+Inflates a normal action           leverage, utilize, facilitate, empower,
+                                   unlock, harness, streamline, elevate,
+                                   supercharge, transform
+Announces depth, delivers none     delve, unpack, journey, embark, realm,
+                                   landscape, tapestry, intricate,
+                                   multifaceted, paradigm
+Reacts instead of reporting        game changer, this changes everything,
+                                   a testament to, pivotal, seminal
+```
+
+Cut an empty adverb: just, simply, truly, actually, literally, fundamentally, importantly, crucially, inevitably. Keep one when it carries contrast, emphasis, or real uncertainty. "I honestly do not know why the retry fires twice" keeps its adverb.
 
 Check your prose before you send it. Read it once, and correct:
 
-1. A sentence that is true of any other company or product.
-2. A word from the banned list, or an empty adverb or phrase.
-3. A named pattern from the list above.
-4. An em dash inside a sentence.
-5. A last line that recaps the text or reaches for a metaphor.
+1. A sentence that survives the swap test.
+2. A clause that rates a fact rather than adding one.
+3. One of the five shapes from rule 3.
+4. A quality adjective with no measurement, or a claim with no named source.
+5. An em dash inside a sentence, or formatting that carries no information.
+6. A last line that recaps the text or reaches for a metaphor.
 
-When you edit a draft of mine, the rules change. Keep my voice, my edge, my structure, and my hedges. Make the minimum effective edit, and never rewrite my words into ASD-STE100. Read `~/.claude/references/no-ai-slop/editing.md` first. When I ask if a text reads as AI, name the patterns and stop. Do not rewrite it, do not score it, and do not guess who wrote it.
+When the prose is mine, the rules change. They apply to what you add, not to what I wrote:
+
+- Keep my voice: my word choice, my rhythm, my bluntness, my hedges, and my digressions.
+- Make the smallest edit that fixes the problem. Leave a sentence that already works.
+- Never add a fact, a number, a source, or an opinion that I did not write. Ask me.
+- Never rewrite my prose into ASD-STE100. Never make my language safer or more professional.
+- Tell me what you changed, in a few lines.
+- If I ask whether a text reads as AI, name the failure and quote the line. Do not rewrite it, do not score it, and do not guess who wrote it.
 
 Reference files are in `~/.claude/references/no-ai-slop/`. Read the applicable file when you need more than the list above:
 
-- `patterns.md` — all 18 patterns with before and after pairs.
-- `words.md` — the full word lists, the exceptions, and the verb phrases to compress.
-- `editing.md` — the edit and detect jobs, the principles for my drafts, and the 21-point checklist.
-- `with-ste.md` — where the two standards agree, the six places they conflict, and which one wins.
+- `patterns.md` — the five failures in full, with a before and after pair for each shape.
+- `applying.md` — how the rules meet ASD-STE100, which one wins where they disagree, and where neither applies.
 
-Exceptions: the same exceptions as ASD-STE100 apply. A banned word stays inside a quote, a code identifier, or an example of the pattern. A direct instruction from me has priority.
+Exceptions: the same exceptions as ASD-STE100 apply. A listed word stays inside a quote, a code identifier, or an example of the failure. A direct instruction from me has priority.
 
 ## Secrets
 

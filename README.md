@@ -14,7 +14,7 @@ will drift away from.
 | --- | --- |
 | `CLAUDE.md` | 12 rule sections: writing, no AI slop, secrets, git safety, JavaScript and TypeScript, Python, shell scripts, GitHub Actions, commit messages, pull requests, and coding process |
 | `references/asd-ste100/` | The writing standard, in three files that the agent reads on demand |
-| `references/no-ai-slop/` | The slop patterns, the word lists, and the editing rules, in four files that the agent reads on demand |
+| `references/no-ai-slop/` | The five failures in full, and how they meet the writing standard, in two files that the agent reads on demand |
 
 ## How to install it
 
@@ -25,7 +25,7 @@ cp -R references/asd-ste100 references/no-ai-slop ~/.claude/references/
 ```
 
 Claude Code reads `~/.claude/CLAUDE.md` in every session, in every project.
-The file costs about 3.7k tokens. The seven reference files cost nothing until
+The file costs about 3.8k tokens. The five reference files cost nothing until
 the agent needs more detail than the core rules give.
 
 ### To take the writing standard alone
@@ -36,7 +36,7 @@ sections into your own `CLAUDE.md`, then copy `references/asd-ste100/` and
 
 Take either section on its own if you prefer. They cover different problems,
 and each one works alone. If you take both, keep
-`references/no-ai-slop/with-ste.md`. That file settles the six places where the
+`references/no-ai-slop/applying.md`. That file settles the six places where the
 two standards disagree.
 
 ## About ASD-STE100
@@ -65,25 +65,33 @@ of the benefit of the dictionary, and you need no licence for it.
 
 ASD-STE100 fixes the form of a sentence. It cannot tell you whether the
 sentence was worth writing. "The tool improves developer productivity" is
-active, present tense, six words, and plain. It is also true of any tool ever
+active, present tense, six words, and plain. It is also true of every tool ever
 built, so it says nothing.
 
-The `## No AI slop` section closes that gap. It names 18 patterns that make
-text read as machine-written, and it gives each one a fix: the binary contrast,
-the colon reveal, the faux-insight setup, the fake-profound kicker, and so on.
-A named pattern is evidence a reader can check. A detector score is a guess.
+The `## No AI slop` section closes that gap. It names five failures, and gives
+each one a test that runs on a single sentence:
 
-The section adapts the [no-ai-slop
-skill](https://github.com/petergyang/no-ai-slop) by Peter Yang, which is MIT
-licensed. The pattern names and the word lists are his. The before and after
-pairs in `references/no-ai-slop/` are written for this repo.
+1. The sentence is portable. Swap the subject for a competitor. If it survives,
+   it carries no information.
+2. The sentence rates a fact instead of adding one.
+3. The sentence borrows a shape to fake insight: the pivot, the reveal, the
+   self-answered question, the stack, the kicker.
+4. The claim has no backing. No measurement, or no named source.
+5. The form decorates instead of serving.
 
-Two rules in that section govern the agent, not the prose:
+Five tests beat a list of banned phrases, because a test catches the shape you
+have not seen before. The word list in that section is grouped by the reason
+each group fails, for the same reason.
 
-- When it edits a draft of yours, it keeps your voice and makes the minimum
-  edit. It never rewrites your words into ASD-STE100.
-- When you ask whether a text reads as AI, it names the patterns and stops. It
-  does not rewrite the text, score it, or guess who wrote it.
+Two of the rules govern the agent rather than the prose. When it edits a draft
+of yours it keeps your voice and makes the smallest edit that works, and it
+never rewrites your words into ASD-STE100. When you ask whether a text reads as
+AI it names the failure and quotes the line, and it does not score the text or
+guess who wrote it.
+
+Peter Yang's [no-ai-slop skill](https://github.com/petergyang/no-ai-slop) is
+the reason this section exists. The rules, the tests, the taxonomy, and the
+examples here are written for this repo.
 
 ## About the coding guidelines
 
