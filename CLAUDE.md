@@ -54,6 +54,24 @@ Reference files are in `~/.claude/references/asd-ste100/`. Read the applicable f
 
 Exceptions: code, identifiers, file paths, command output, and quoted text do not change. A style rule elsewhere in this file, or a direct instruction from me, has priority.
 
+## Explain with concrete examples
+
+When you ask me to decide something, or explain how a design behaves, add one small concrete example. A rule alone makes me translate it in my head. An example lets me check it on the first read.
+
+- Use real-looking values: a name, a time, an amount, an id. Write "Anna, 10:00:03", not "a user, at some point".
+- Show behaviour over time as a short timeline in a ```text block, one line for each step.
+- Give one example for each path that matters: the normal case, then each failure case.
+- When you recommend one option over another, show the case where the other option fails.
+- Keep each example to a few lines. Use the identifiers and the numbers from the real design.
+
+```text
+Rule:    the API saves the row before it answers, with a 3 s deadline.
+Example: 10:00:00.000  the webhook arrives
+         10:00:00.080  the row is saved
+         10:00:00.090  the API answers 200
+Failure: the database hangs -> at 10:00:03 the API answers 503, and the vendor retries at 11:00.
+```
+
 ## Secrets
 
 Keep every secret out of version control, and out of any file that I could publish.

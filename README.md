@@ -12,7 +12,7 @@ will drift away from.
 
 | Path | What it holds |
 | --- | --- |
-| `CLAUDE.md` | 11 rule sections: writing, secrets, git safety, JavaScript and TypeScript, Python, shell scripts, GitHub Actions, commit messages, pull requests, and coding process |
+| `CLAUDE.md` | 12 rule sections: writing, concrete examples, secrets, git safety, JavaScript and TypeScript, Python, shell scripts, GitHub Actions, commit messages, pull requests, and coding process |
 | `references/asd-ste100/` | The writing standard, in three files that the agent reads on demand |
 
 ## How to install it
@@ -24,7 +24,7 @@ cp -R references/asd-ste100 ~/.claude/references/
 ```
 
 Claude Code reads `~/.claude/CLAUDE.md` in every session, in every project.
-The file costs about 2.7k tokens. The three reference files cost nothing until
+The file costs about 2.9k tokens. The three reference files cost nothing until
 the agent needs more detail than the core rules give.
 
 ### To take the writing standard alone
